@@ -3,4 +3,5 @@
     <string name="str_btnSejarahBrics">Sejarah BRICS</string>
     <string name="str_btnDaftarNegara">Daftar Negara</string>
     <string name="str_btnTentang">Tentang Aplikasi</string>
+    <string name="str_tvJudulSejarah">Sejarah BRICS</string>
 </resources>
