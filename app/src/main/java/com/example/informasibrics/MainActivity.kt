@@ -25,5 +25,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnSejarahBrics.setOnClickListener {
             startActivity(Intent(this, SejarahBrics::class.java))
         }
+
+        binding.btnTentang.setOnClickListener {
+            startActivity(Intent(this, TentangAplikasi::class.java))
+        }
     }
 }
