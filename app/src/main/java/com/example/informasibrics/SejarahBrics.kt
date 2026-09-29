@@ -22,10 +22,24 @@ class SejarahBrics : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val htmlString = resources.openRawResource(R.raw.sejarah_brics)
+        val htmlSejarahBricsString = resources.openRawResource(R.raw.sejarah_brics)
             .bufferedReader()
             .use { it.readText() }
-        binding.tvSejarah.text = HtmlCompat.fromHtml(htmlString, HtmlCompat.FROM_HTML_MODE_LEGACY)
+        binding.tvSejarah.text = HtmlCompat.fromHtml(htmlSejarahBricsString, HtmlCompat.FROM_HTML_MODE_LEGACY)
         binding.tvSejarah.movementMethod = LinkMovementMethod.getInstance()
+
+        val htmlPerkembanganBricsString = resources.openRawResource(R.raw.perkembangan_brics)
+            .bufferedReader()
+            .use { it.readText() }
+        binding.tvPerkembangan.text = HtmlCompat.fromHtml(htmlPerkembanganBricsString, HtmlCompat.FROM_HTML_MODE_LEGACY)
+
+        binding.tvPerkembangan.movementMethod = LinkMovementMethod.getInstance()
+
+        val htmlTantanganBricsString = resources.openRawResource(R.raw.tantangan_brics)
+            .bufferedReader()
+            .use { it.readText() }
+        binding.tvTantangan.text = HtmlCompat.fromHtml(htmlTantanganBricsString, HtmlCompat.FROM_HTML_MODE_LEGACY)
+
+        binding.tvTantangan.movementMethod = LinkMovementMethod.getInstance()
     }
 }
