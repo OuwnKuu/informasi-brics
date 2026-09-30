@@ -20,9 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SejarahBrics"></activity>
+        <activity android:name=".SejarahBrics" />
         <activity
             android:name=".TentangAplikasi"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".DaftarNegara"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
