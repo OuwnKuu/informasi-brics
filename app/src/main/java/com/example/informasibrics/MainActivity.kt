@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, SejarahBrics::class.java))
         }
 
+        binding.btnDaftarNegara.setOnClickListener {
+            startActivity(Intent(this, DaftarNegara::class.java))
+        }
+
         binding.btnTentang.setOnClickListener {
             startActivity(Intent(this, TentangAplikasi::class.java))
         }
