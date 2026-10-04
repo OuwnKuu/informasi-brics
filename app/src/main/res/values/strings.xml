@@ -8,4 +8,5 @@
     <string name="str_tvJudulTantangan">Tantangan</string>
     <string name="str_tvRingkasanAplikasi">Aplikasi yang membahas BRICS ini dibuat untuk tugas sekolah dan masih belum selesai sepenuhnya. Silahkan untuk melihat source code aplikasi ini di GitHub. Lisensi yang digunakan adalah BSD-3 Clause license.</string>
     <string name="str_tvLinkGitHub">Link GitHub: https://github.com/OuwnKuu/informasi-brics</string>
+    <string name="str_imgNegara">Gambar Negara</string>
 </resources>
