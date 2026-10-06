@@ -3,6 +3,7 @@ package com.example.informasibrics
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -44,7 +45,20 @@ class DaftarNegara : AppCompatActivity() {
                 binding.rvDaftarNegara.adapter = adapter
             }
         }.start()
-// TODO: Bikin SearchView berfungsi 
-//        binding.svCariNegara.setOnQueryTextListener()
+        binding.svCariNegara.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                val keyword = binding.svCariNegara.query.toString().trim()
+                val hasil = semuaNegara.filter {
+                    "${it.namaNegara} ${it.iso2} ${it.iso3}"
+                        .contains(keyword, ignoreCase = true)
+                }
+                adapter.updateData(hasil)
+                return true
+            }
+        })
     }
 }
