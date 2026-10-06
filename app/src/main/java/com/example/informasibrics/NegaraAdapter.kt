@@ -31,11 +31,12 @@ class NegaraAdapter(private var negaraList: MutableList<Negara>):
 
     override fun onBindViewHolder(holder: NegaraViewHolder, position: Int) {
         val negara = negaraList[position]
+        val safeUrl = negara.benderaNegara.trim()
 
         holder.tNama?.text = negara.namaNegara
         holder.tIso2?.text = negara.iso2
         holder.tIso3?.text = negara.iso3
-        holder.imgNegara.load(negara.benderaNegara) {
+        holder.imgNegara.load(safeUrl) {
             crossfade(true)
             addHeader("User-Agent", "Mozilla/5.0")
             error(R.drawable.ic_launcher_background)

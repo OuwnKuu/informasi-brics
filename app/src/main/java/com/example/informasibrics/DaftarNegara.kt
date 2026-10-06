@@ -24,12 +24,21 @@ class DaftarNegara : AppCompatActivity() {
             insets
         }
 
+        val daftarNegaraBrics = listOf(
+            "BR", "RU", "IN", "CN", "ZA",
+            "SA", "EG", "ET", "IR", "AE",
+            "ID"
+        )
+
         binding.rvDaftarNegara.layoutManager = LinearLayoutManager(this)
         Thread {
             val daftarNegara = ApiClient.getNegara()
             runOnUiThread {
                 semuaNegara.clear()
-                semuaNegara.addAll(daftarNegara)
+                val negaraBrics = daftarNegara.filter { negara ->
+                    daftarNegaraBrics.contains(negara.iso2)
+                }
+                semuaNegara.addAll(negaraBrics)
 
                 adapter = NegaraAdapter(semuaNegara.toMutableList())
                 binding.rvDaftarNegara.adapter = adapter
