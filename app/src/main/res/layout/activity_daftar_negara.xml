@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:iconifiedByDefault="false"
         android:background="#B0C8D5"
+        android:layout_margin="16dp"
         />
 
     <androidx.recyclerview.widget.RecyclerView

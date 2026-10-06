@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.decode.SvgDecoder
+import coil.load
 
 class NegaraAdapter(private var negaraList: MutableList<Negara>):
     RecyclerView.Adapter<NegaraAdapter.NegaraViewHolder>() {
@@ -33,8 +35,12 @@ class NegaraAdapter(private var negaraList: MutableList<Negara>):
         holder.tNama?.text = negara.namaNegara
         holder.tIso2?.text = negara.iso2
         holder.tIso3?.text = negara.iso3
-
-        // TODO: Baris kode glide untuk gambar negara
+        holder.imgNegara.load(negara.benderaNegara) {
+            crossfade(true)
+            addHeader("User-Agent", "Mozilla/5.0")
+            error(R.drawable.ic_launcher_background)
+            decoderFactory(SvgDecoder.Factory())
+        }
     }
 
     override fun getItemCount(): Int {
